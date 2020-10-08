@@ -20,3 +20,28 @@
 #   String.isogram?("eleven") # => false
 #   String.isogram?("subdermatoglyphic") # => true
 
+
+class String
+
+  def String.isogram?(input)
+
+
+    s = input.downcase.gsub(/[^a-z0-9\s]/i, "").gsub(/\s+/, "").split("")
+    
+    while s.length > 1 do
+      c = s[0]
+      size = s.length
+      s = s[1..size]
+
+      inS = s.include? c
+      
+      if inS
+        return(false)
+      end
+
+    end
+
+
+    return true
+  end
+end

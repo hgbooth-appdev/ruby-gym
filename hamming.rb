@@ -38,3 +38,38 @@
 
 #   p g_dna.distance_between(t_dna) # => 1
 
+
+class Dna 
+
+  attr_accessor :strand
+
+  def distance_between(other)
+    ours = self.strand.split("")
+    theirs = other.strand.split("")
+
+    if ours.length != theirs.length
+      return("ERROR")
+    end
+
+    counter = []
+    i = 0
+    ours.each do 
+      counter.push(i)
+      i = i+1
+    end
+    
+    res = 0
+    counter.each do |j|
+      us = ours[j]
+      them = theirs[j]
+
+      if us != them 
+        res = res+1
+      end
+      
+    end
+    
+    return(res)
+
+  end
+end

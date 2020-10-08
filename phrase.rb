@@ -23,5 +23,37 @@
 #   b.body = "Complementary metal-oxide semiconductor"
 #   b.abbreviate # => "CMOS"
 
+class Phrase
+
+  attr_accessor :body
+
+  def abbreviate
+
+    words = self.body.gsub(/[^a-z0-9\s]/i, " ").upcase.split(" ")
+
+    int = []
+
+    words.each do |word|
+      
+      word = word.split("")
+      firstL = word[0]
+      int.push(firstL)
+
+    end
+
+    res = ""
+
+    int.each do |letter|
+      res = res + letter    
+    end
+    
+    # p res
+    return res
+  end
+
+end
 
 
+a = Phrase.new
+a.body = "Portable Network Graphics"
+a.abbreviate # => "PNG"

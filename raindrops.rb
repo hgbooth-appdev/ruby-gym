@@ -37,3 +37,26 @@
 
 
 p "Enter an integer"
+
+n = gets.chomp.to_i
+
+div3 = n%3 == 0
+div5 = n%5 == 0
+div7 = n%7 == 0
+
+
+if !(div3 | div5 | div7)
+  p n
+else
+  res = ""
+  if div3 
+    res = res + "Pling"
+  end
+  if div5 
+    res = res + "Plang"
+  end
+  if div7
+    res = res + "Plong"
+  end 
+  p res
+end

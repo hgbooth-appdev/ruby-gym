@@ -29,3 +29,30 @@
 #     (x-j)^2 + (y-k)^2 = r^2
 
 p "Enter X,Y coordinates in the format 'X,Y'"
+
+coords = gets.chomp.split(",")
+
+x = coords[0].to_f
+y = coords[1].to_f
+
+dist = Math.sqrt(x**2 + y**2)
+
+def pts(distance)
+  res = 0
+  if distance > 10
+    res = 0    
+  elsif distance > 5
+    res = 1
+  elsif distance > 1
+    res = 5
+  else
+    res = 10
+    
+  end
+  return(res)
+  
+end
+
+n = pts(dist).to_s
+
+p n + " points"

@@ -11,3 +11,16 @@
 # 16
 
 p "Enter at least 2 numbers, separated by spaces:"
+
+s = gets.chomp.split(" ")
+
+res = 0
+
+s.each do |n|
+  m = n.to_i
+  if m%2 == 1
+    res = res + m
+  end
+end
+
+p res

@@ -28,8 +28,42 @@ unpredictable_inputs = [
 ]
 
 some_random_input = unpredictable_inputs.sample
+# some_random_input = unpredictable_inputs
 
 p some_random_input
 
 # Write your code below
 
+input = some_random_input
+c = input.class
+
+if c == String
+  p input.downcase
+
+elsif c == Time
+  p input.strftime("%A").downcase
+
+elsif c == Integer
+  if input.odd?
+    p input.to_s + " is odd"
+  else 
+    p input.to_s + " is even"
+  end
+
+elsif c == Symbol
+  input = input.to_s
+  p ":" + input.downcase
+
+elsif c == NilClass
+  p "no object provided"
+
+elsif c == TrueClass
+  p "you may pass"
+
+elsif c == FalseClass
+  p "you may not pass"
+
+elsif c == Hash
+  p input.keys
+
+end
